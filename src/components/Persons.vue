@@ -1,5 +1,8 @@
 <template>
   <panel title="Persons">
+     <v-btn @click="addPerson()" right flat icon absolute>
+        <v-icon>add</v-icon>
+      </v-btn>
     <v-list v-for="p in persons" :key="p.uid">
       <v-list-tile avatar ripple>
         <v-list-tile-content>
@@ -37,6 +40,10 @@ export default {
   methods: {
     async deletePerson (uid) {
       PersonService.deletePerson(uid)
+      this.$router.go()
+    },
+    async addPerson () {
+      PersonService.addFakePerson()
       this.$router.go()
     }
   }

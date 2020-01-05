@@ -5,6 +5,7 @@ export default {
     return Api().get('transactions')
   },
   addTransaction (data) {
+    Api().get('fakeTransactions/1', data)
     return Api().post('transactions', data)
   },
   editTransaction (uid, data) {

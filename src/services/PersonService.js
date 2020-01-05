@@ -9,5 +9,9 @@ export default {
   },
   deletePerson (uid) {
     return Api().delete(`persons/${uid}`)
+  },
+  addFakePerson () {
+    Api().get('fakePersons/1')
+    return Api().get('persons')
   }
 }
